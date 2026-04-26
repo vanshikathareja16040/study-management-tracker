@@ -1,5 +1,5 @@
 
-// ── DATA ──────────────────────────────────────────────
+
 const COLORS = [
   { bg: '#F3F0FF', stripe: '#7C6FF7', text: '#7C6FF7' },
   { bg: '#FFF0F7', stripe: '#FF7EB3', text: '#E05A96' },
@@ -21,17 +21,17 @@ const DAY_FULL = {
   Thu: 'Thursday', Fri: 'Friday', Sat: 'Saturday', Sun: 'Sunday'
 };
  
-// ── STATE ─────────────────────────────────────────────
+
 let sessions = JSON.parse(localStorage.getItem('tt_sessions') || '[]');
 let activeDay = 'Mon';
 let selColor = 0;
  
-// ── SAVE ──────────────────────────────────────────────
+
 function save() {
   try { localStorage.setItem('tt_sessions', JSON.stringify(sessions)); } catch (e) {}
 }
  
-// ── COLOR PICKER ──────────────────────────────────────
+
 function buildColorPicker() {
   document.getElementById('colorPicker').innerHTML = DOT_COLORS.map((c, i) =>
     `<div class="color-dot${i === selColor ? ' active' : ''}"
@@ -46,7 +46,7 @@ function pickColor(i) {
   buildColorPicker();
 }
  
-// ── DAY TABS ──────────────────────────────────────────
+
 document.getElementById('dayTabs').addEventListener('click', e => {
   const tab = e.target.closest('.day-tab');
   if (!tab) return;
@@ -57,7 +57,7 @@ document.getElementById('dayTabs').addEventListener('click', e => {
   renderSessions();
 });
  
-// ── ADD SESSION ───────────────────────────────────────
+
 function addSession() {
   const subj = document.getElementById('inp-subject').value.trim();
   const time = document.getElementById('inp-time').value;
@@ -72,7 +72,7 @@ function addSession() {
   sessions.sort((a, b) => a.day === b.day ? a.time.localeCompare(b.time) : 0);
   save();
  
-  // Clear inputs
+
   document.getElementById('inp-subject').value = '';
   document.getElementById('inp-goal').value    = '';
   document.getElementById('inp-time').value    = '';
@@ -81,15 +81,14 @@ function addSession() {
   renderSessions();
   showToast('Session added!');
 }
- 
-// ── DELETE SESSION ────────────────────────────────────
+
 function delSession(id) {
   sessions = sessions.filter(s => String(s.id) !== String(id));
   save();
   renderSessions();
 }
  
-// ── TIME HELPERS ──────────────────────────────────────
+
 function fmtTime(t) {
   if (!t) return '';
   let [h, m] = t.split(':').map(Number);
@@ -104,7 +103,7 @@ function endTime(t, dur) {
   return `${String(Math.floor(mins / 60) % 24).padStart(2, '0')}:${String(mins % 60).padStart(2, '0')}`;
 }
  
-// ── RENDER SESSIONS ───────────────────────────────────
+
 function renderSessions() {
   const day = document.getElementById('viewDaySelect').value;
   document.getElementById('viewDayLabel').textContent = DAY_FULL[day] || day;
@@ -141,7 +140,7 @@ function renderSessions() {
   renderStats();
 }
  
-// ── RENDER STATS ──────────────────────────────────────
+
 function renderStats() {
   const totalMins  = sessions.reduce((a, s) => a + s.dur, 0);
   const activeDays = new Set(sessions.map(s => s.day)).size;
@@ -164,7 +163,7 @@ function renderStats() {
     </div>`;
 }
  
-// ── DOWNLOAD ──────────────────────────────────────────
+
 function downloadTimetable() {
   const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   let txt = '=== WEEKLY STUDY TIMETABLE ===\n\n';
@@ -192,7 +191,7 @@ function downloadTimetable() {
   showToast('Timetable downloaded!');
 }
  
-// ── TOAST ─────────────────────────────────────────────
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -200,10 +199,10 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2400);
 }
  
-// ── INIT ──────────────────────────────────────────────
+
 buildColorPicker();
  
-// Highlight today's tab automatically
+
 const dayNames   = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const todayShort = dayNames[new Date().getDay()];
 const todayTab   = [...document.querySelectorAll('.day-tab')].find(t => t.dataset.day === todayShort);
