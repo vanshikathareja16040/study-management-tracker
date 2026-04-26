@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Study Timetable Creator</title>
  
-  <!-- Google Fonts -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
  
-  <!-- Stylesheet -->
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
  
-  <!-- ── HEADER ── -->
+
   <div class="header">
     <div class="header-icon">📚</div>
     <h1>Study Timetable Creator</h1>
     <p>Plan your week, ace your goals</p>
   </div>
  
-  <!-- ── MAIN CARD ── -->
+ 
   <div class="main-card">
  
-    <!-- Day Tabs -->
+  
     <div class="day-tabs" id="dayTabs">
       <div class="day-tab active" data-day="Mon">Mon</div>
       <div class="day-tab" data-day="Tue">Tue</div>
@@ -34,7 +34,7 @@
       <div class="day-tab" data-day="Sun">Sun</div>
     </div>
  
-    <!-- Form -->
+  
     <div class="section-label">Session Details</div>
  
     <div class="field">
@@ -79,7 +79,7 @@
       Add to Timetable
     </button>
  
-    <!-- Timetable Display -->
+  
     <div class="divider">Your Timetable</div>
  
     <div class="timetable-header">
@@ -102,10 +102,9 @@
  
     <div class="sessions-list" id="sessionsList"></div>
  
-    <!-- Stats -->
     <div class="stats-row" id="statsRow"></div>
  
-    <!-- Download -->
+    
     <button class="btn-download" onclick="downloadTimetable()">
       <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
         <path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -116,10 +115,9 @@
  
   </div>
  
-  <!-- Toast notification -->
+  
   <div class="toast" id="toast"></div>
  
-  <!-- JavaScript -->
   <script src="script.js"></script>
  
 </body>
