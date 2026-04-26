@@ -30,7 +30,7 @@ body {
   padding: 0 0 60px;
 }
  
-/* ── HEADER ── */
+
 .header {
   background: linear-gradient(135deg, #7C6FF7 0%, #B06EF7 60%, #FF7EB3 100%);
   padding: 32px 24px 48px;
@@ -77,7 +77,7 @@ body {
   margin-top: 4px;
 }
  
-/* ── MAIN CARD ── */
+
 .main-card {
   background: var(--card);
   border-radius: 24px 24px 0 0;
@@ -90,7 +90,7 @@ body {
   margin-right: auto;
 }
  
-/* ── DAY TABS ── */
+
 .day-tabs {
   display: flex;
   gap: 6px;
@@ -121,7 +121,7 @@ body {
   box-shadow: 0 3px 12px rgba(124,111,247,0.35);
 }
  
-/* ── SECTION LABEL ── */
+
 .section-label {
   font-size: 11px;
   font-weight: 800;
@@ -132,7 +132,7 @@ body {
   margin-top: 18px;
 }
  
-/* ── FORM FIELDS ── */
+
 .field { margin-bottom: 12px; }
 .field label {
   display: block;
@@ -168,7 +168,7 @@ body {
   gap: 10px;
 }
  
-/* ── COLOR PICKER ── */
+
 .color-row {
   display: flex;
   gap: 7px;
@@ -189,7 +189,7 @@ body {
   transform: scale(1.15);
 }
  
-/* ── ADD BUTTON ── */
+
 .btn-add {
   width: 100%;
   padding: 14px;
@@ -213,7 +213,7 @@ body {
 .btn-add:hover { opacity: 0.92; transform: translateY(-1px); }
 .btn-add:active { transform: scale(0.98); }
  
-/* ── DIVIDER ── */
+
 .divider {
   display: flex;
   align-items: center;
@@ -232,7 +232,7 @@ body {
   border-radius: 2px;
 }
  
-/* ── TIMETABLE HEADER ── */
+
 .timetable-header {
   display: flex;
   align-items: center;
@@ -258,7 +258,7 @@ body {
   border-radius: 20px;
 }
  
-/* ── SESSION CARDS ── */
+
 .sessions-list {
   display: flex;
   flex-direction: column;
@@ -348,8 +348,7 @@ body {
   flex-shrink: 0;
 }
 .del-btn:hover { background: #FFD6E0; color: #E05A7A; }
- 
-/* ── STATS ── */
+
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -395,7 +394,7 @@ body {
 }
 .btn-download:hover { background: var(--primary); color: #fff; }
  
-/* ── TOAST ── */
+
 .toast {
   position: fixed;
   bottom: 24px;
